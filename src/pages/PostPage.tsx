@@ -73,7 +73,9 @@ const Posts = () => {
             />
           </svg>
         ) : isError ? (
-          <div className='text-bold font-medium'>Error not found</div>
+          <div className='text-bold font-medium'>
+            Error: Subreddit not found
+          </div>
         ) : (
           data?.map((dat, i) => <PostItem data={dat} key={i} />)
         )}
@@ -108,8 +110,8 @@ function PostItem({ data }: { data: Child }) {
   };
 
   return (
-    <div className='items-startustify-between flex flex-col gap-3 rounded-md border bg-gray-50 px-5 py-3 transition-all duration-500 hover:border hover:border-gray-400 dark:border-zinc-900 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:border dark:hover:border-gray-400'>
-      <a href={data.data?.url}>
+    <div className='flex flex-col gap-3 rounded-md border bg-gray-50 px-5 py-3 transition-all duration-500 hover:border hover:border-gray-400 dark:border-zinc-900 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:border dark:hover:border-gray-400'>
+      <a href={`https://www.reddit.com${data.data?.permalink}`}>
         <div className=' text-sm'>
           Posted by u/{data.data?.author} {convDate(data.data?.created)}
         </div>
