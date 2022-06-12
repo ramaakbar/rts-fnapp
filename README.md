@@ -19,13 +19,13 @@ Random react website to strengthen my react knowledge
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/ramaakbar/rts-fnapp
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd rts-fnapp
 ```
 
 Install dependencies
