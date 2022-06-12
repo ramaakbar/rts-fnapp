@@ -25,7 +25,7 @@ export default function Navbar() {
   }, [theme]);
 
   return (
-    <div className='border-b px-4 dark:border-zinc-800'>
+    <div className='sticky top-0 z-10 border-b bg-white/30 px-4 backdrop-blur-lg dark:border-zinc-800 dark:bg-zinc-900/30'>
       <nav className='mx-auto flex w-full max-w-4xl items-center justify-between py-2'>
         <div className='ml-[-0.60rem] '>
           <Link
