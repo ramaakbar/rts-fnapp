@@ -1,7 +1,5 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools';
 import usePosts from '../hooks/usePosts';
 import { Child } from '../models/Post';
 import { BiUpvote } from 'react-icons/bi';
@@ -92,6 +90,7 @@ export default function PostPage() {
   );
 }
 function PostItem({ data }: { data: Child }) {
+  // eslint-disable-next-line
   const [colors, setColors] = useState([
     'bg-rose-500',
     'bg-sky-500',
@@ -101,7 +100,7 @@ function PostItem({ data }: { data: Child }) {
 
   useEffect(() => {
     setColor(colors[Math.floor(Math.random() * colors.length)]);
-  }, []);
+  }, [colors]);
 
   const convDate = (time: number | undefined): string => {
     let newDate = new Date(time! * 1000);
