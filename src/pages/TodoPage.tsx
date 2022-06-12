@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import useTodos from '../hooks/useTodos';
-import { useAutoAnimate } from '@formkit/auto-animate/react';
 
 export default function TodoPage() {
-  const [animationParent] = useAutoAnimate<HTMLDivElement>();
   const { todos, addTodo, removeTodo } = useTodos();
 
   const [inputTodo, setInputTodo] = useState('');
@@ -38,7 +36,7 @@ export default function TodoPage() {
         </button>
       </form>
 
-      <div className='mt-5 flex flex-col gap-4 ' ref={animationParent}>
+      <div className='mt-5 flex flex-col gap-4 '>
         {todos.map((todo) => {
           return (
             <div
