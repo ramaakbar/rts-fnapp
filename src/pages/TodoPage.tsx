@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import useTodos from '../hooks/useTodos';
+import { useAutoAnimate } from '@formkit/auto-animate/react';
 
 export default function TodoPage() {
+  const [animationParent] = useAutoAnimate<HTMLDivElement>();
+
   const { todos, addTodo, removeTodo } = useTodos();
 
   const [inputTodo, setInputTodo] = useState('');
@@ -16,7 +19,7 @@ export default function TodoPage() {
   };
 
   return (
-    <div className='mx-auto mt-8 mb-4 max-w-3xl px-4'>
+    <div className='mx-auto mt-8 mb-4 max-w-3xl px-4 '>
       <h2 className='text-4xl font-extrabold'>To do </h2>
 
       <form
@@ -36,7 +39,7 @@ export default function TodoPage() {
         </button>
       </form>
 
-      <div className='mt-5 flex flex-col gap-4 '>
+      <div className='mt-5 flex flex-col gap-4 ' ref={animationParent}>
         {todos.map((todo) => {
           return (
             <div
